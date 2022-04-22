@@ -1,4 +1,4 @@
-(let cartButton = document.querySelector(".cart__checkout-button");
+let cartButton = document.querySelector(".cart__checkout-button");
 if (cartButton) {
   cartButton.addEventListener("click", (e) => {
     //fetch cart obj
@@ -10,4 +10,4 @@ if (cartButton) {
       })
       .catch((err) => console.log(err));
   });
-})()
+});
