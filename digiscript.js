@@ -5,8 +5,20 @@ if (cartButton) {
     fetch("/cart.js")
       .then((res) => res.json())
       .then((cartObj) => {
-        console.log("FABY  ", { cartObj });
-        window.location.replace("https://cartapp.digitalcart.app/#e8a153371b");
+        let f = document.createElement("form");
+        f.action = "https://cartapp.digitalcart.app/";
+        f.method = "post";
+        f.target = "_parent";
+
+        let i = document.createElement("input");
+        i.type = "hidden";
+        i.name = "digitalmarketCartData";
+        i.id = "digitalmarketCartData";
+        i.value = `${cartObj}`;
+        f.appendChild(i);
+
+        document.body.appendChild(f);
+        f.submit();
       })
       .catch((err) => console.log(err));
   });
