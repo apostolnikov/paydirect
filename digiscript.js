@@ -10,4 +10,4 @@ if (cartButton) {
       })
       .catch((err) => console.log(err));
   });
-});
+}
